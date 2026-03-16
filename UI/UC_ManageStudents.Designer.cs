@@ -1,4 +1,4 @@
-﻿namespace FYPManagementSystem
+namespace FYPManagementSystem.Forms
 {
     partial class uc_manage_student
     {
@@ -87,7 +87,7 @@
             // 
             // databaseConnectionBindingSource
             // 
-            databaseConnectionBindingSource.DataSource = typeof(DAL.DatabaseConnection);
+            databaseConnectionBindingSource.DataSource = typeof(DataLayer.DatabaseConnection);
             // 
             // panel1
             // 
@@ -107,13 +107,13 @@
             dgvStudents.BackgroundColor = SystemColors.Control;
             dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvStudents.Dock = DockStyle.Fill;
-            dgvStudents.GridColor = SystemColors.HighlightText;
             dgvStudents.Location = new Point(150, 0);
             dgvStudents.Name = "dgvStudents";
             dgvStudents.ReadOnly = true;
             dgvStudents.RowHeadersWidth = 51;
             dgvStudents.Size = new Size(1152, 487);
             dgvStudents.TabIndex = 12;
+            dgvStudents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStudents.CellContentClick += dataGridView1_CellContentClick;
             // 
             // uc_manage_student

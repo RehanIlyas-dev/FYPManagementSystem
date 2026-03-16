@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     public partial class MainDashBoard : Form
     {
@@ -17,7 +17,7 @@ namespace FYPManagementSystem.UI
 
         private void MainDashBoard_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace FYPManagementSystem.UI
         {
 
             this.panelMainContent.Controls.Clear();
-            FYPManagementSystem.uc_manage_student studentScreen = new FYPManagementSystem.uc_manage_student();
+            uc_manage_student studentScreen = new uc_manage_student();
             studentScreen.Dock = DockStyle.Fill;
             this.panelMainContent.Controls.Add(studentScreen);
             studentScreen.BringToFront();

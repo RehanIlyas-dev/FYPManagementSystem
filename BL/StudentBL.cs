@@ -1,31 +1,31 @@
-using FYPManagementSystem.DAL;
-using FYPManagementSystem.Models;
 using System.Data;
+using FYPManagementSystem.Classes;
+using FYPManagementSystem.DataLayer;
 
-namespace FYPManagementSystem.BLL
+namespace FYPManagementSystem.BusinessLogic
 {
     public class StudentBL
     {
-        private StudentDL dl = new StudentDL();
+        private StudentDL studentData = new StudentDL();
 
         public bool AddStudent(StudentModel std)
         {
-            return dl.AddStudent(std);
+            return studentData.AddStudent(std);
         }
 
         public DataTable GetStudents()
         {
-            return dl.GetStudents();
+            return studentData.GetStudents();
         }
 
         public bool UpdateStudent(StudentModel std)
         {
-            return dl.UpdateStudent(std);
+            return studentData.UpdateStudent(std);
         }
 
         public bool DeleteStudent(int personId)
         {
-            return dl.DeleteStudent(personId);
+            return studentData.DeleteStudent(personId);
         }
     }
 }

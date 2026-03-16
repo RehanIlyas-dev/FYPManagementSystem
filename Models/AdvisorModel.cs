@@ -1,6 +1,6 @@
 using System;
 
-namespace FYPManagementSystem.Models
+namespace FYPManagementSystem.Classes
 {
     public class AdvisorModel
     {

@@ -1,4 +1,4 @@
-﻿namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     partial class UpdateStudent
     {
@@ -41,6 +41,7 @@
             // 
             // txtFirstName
             // 
+            txtFirstName.Anchor = AnchorStyles.Top;
             txtFirstName.Location = new Point(12, 209);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.PlaceholderText = "FirstName";
@@ -49,6 +50,7 @@
             // 
             // txtLastName
             // 
+            txtLastName.Anchor = AnchorStyles.Top;
             txtLastName.Location = new Point(143, 209);
             txtLastName.Name = "txtLastName";
             txtLastName.PlaceholderText = "LastName";
@@ -57,6 +59,7 @@
             // 
             // txtContact
             // 
+            txtContact.Anchor = AnchorStyles.Top;
             txtContact.Location = new Point(274, 209);
             txtContact.Name = "txtContact";
             txtContact.PlaceholderText = "Contact";
@@ -65,6 +68,7 @@
             // 
             // txtEmail
             // 
+            txtEmail.Anchor = AnchorStyles.Top;
             txtEmail.Location = new Point(405, 209);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
@@ -73,6 +77,7 @@
             // 
             // txtRegNo
             // 
+            txtRegNo.Anchor = AnchorStyles.Top;
             txtRegNo.Location = new Point(536, 209);
             txtRegNo.Name = "txtRegNo";
             txtRegNo.PlaceholderText = "Registration No";
@@ -81,10 +86,11 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RosyBrown;
-            label1.Location = new Point(459, 9);
+            label1.Location = new Point(410, 9);
             label1.Name = "label1";
             label1.Size = new Size(410, 68);
             label1.TabIndex = 5;
@@ -92,6 +98,7 @@
             // 
             // dtp01
             // 
+            dtp01.Anchor = AnchorStyles.Top;
             dtp01.Location = new Point(667, 209);
             dtp01.Name = "dtp01";
             dtp01.Size = new Size(250, 27);
@@ -99,6 +106,7 @@
             // 
             // CBGender
             // 
+            CBGender.Anchor = AnchorStyles.Top;
             CBGender.AccessibleName = "Gender";
             CBGender.FormattingEnabled = true;
             CBGender.Items.AddRange(new object[] { "Male", "Female", "Prefer not to say" });
@@ -110,6 +118,7 @@
             // 
             // btnUpdateStudent
             // 
+            btnUpdateStudent.Anchor = AnchorStyles.Top;
             btnUpdateStudent.ForeColor = SystemColors.ActiveCaptionText;
             btnUpdateStudent.Location = new Point(510, 298);
             btnUpdateStudent.Name = "btnUpdateStudent";

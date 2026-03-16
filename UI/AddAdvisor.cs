@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using FYPManagementSystem.Models;
-using FYPManagementSystem.BLL;
+using FYPManagementSystem.Classes;
+using FYPManagementSystem.BusinessLogic;
 
-namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     public partial class AddAdvisor : Form
     {
@@ -39,8 +39,8 @@ namespace FYPManagementSystem.UI
                     Salary = decimal.Parse(txtSalary.Text)
                 };
 
-                AdvisorBL bll = new AdvisorBL();
-                if (bll.AddAdvisor(adv))
+                AdvisorBL bl = new AdvisorBL();
+                if (bl.AddAdvisor(adv))
                 {
                     MessageBox.Show("Advisor added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

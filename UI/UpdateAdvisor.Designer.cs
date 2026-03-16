@@ -1,4 +1,4 @@
-namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     partial class UpdateAdvisor
     {
@@ -42,6 +42,7 @@ namespace FYPManagementSystem.UI
             // 
             // txtFirstName
             // 
+            txtFirstName.Anchor = AnchorStyles.Top;
             txtFirstName.Location = new Point(12, 209);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.PlaceholderText = "FirstName";
@@ -50,6 +51,7 @@ namespace FYPManagementSystem.UI
             // 
             // txtLastName
             // 
+            txtLastName.Anchor = AnchorStyles.Top;
             txtLastName.Location = new Point(143, 209);
             txtLastName.Name = "txtLastName";
             txtLastName.PlaceholderText = "LastName";
@@ -58,6 +60,7 @@ namespace FYPManagementSystem.UI
             // 
             // txtContact
             // 
+            txtContact.Anchor = AnchorStyles.Top;
             txtContact.Location = new Point(274, 209);
             txtContact.Name = "txtContact";
             txtContact.PlaceholderText = "Contact";
@@ -66,6 +69,7 @@ namespace FYPManagementSystem.UI
             // 
             // txtEmail
             // 
+            txtEmail.Anchor = AnchorStyles.Top;
             txtEmail.Location = new Point(405, 209);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
@@ -74,6 +78,7 @@ namespace FYPManagementSystem.UI
             // 
             // txtSalary
             // 
+            txtSalary.Anchor = AnchorStyles.Top;
             txtSalary.Location = new Point(536, 209);
             txtSalary.Name = "txtSalary";
             txtSalary.PlaceholderText = "Salary";
@@ -82,10 +87,11 @@ namespace FYPManagementSystem.UI
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RosyBrown;
-            label1.Location = new Point(443, 9);
+            label1.Location = new Point(433, 9);
             label1.Name = "label1";
             label1.Size = new Size(331, 68);
             label1.TabIndex = 5;
@@ -93,6 +99,7 @@ namespace FYPManagementSystem.UI
             // 
             // dtp01
             // 
+            dtp01.Anchor = AnchorStyles.Top;
             dtp01.Location = new Point(667, 209);
             dtp01.Name = "dtp01";
             dtp01.Size = new Size(250, 27);
@@ -100,6 +107,7 @@ namespace FYPManagementSystem.UI
             // 
             // CBGender
             // 
+            CBGender.Anchor = AnchorStyles.Top;
             CBGender.AccessibleName = "Gender";
             CBGender.FormattingEnabled = true;
             CBGender.Items.AddRange(new object[] { "Male", "Female", "Prefer not to say" });
@@ -111,6 +119,7 @@ namespace FYPManagementSystem.UI
             // 
             // btnUpdateAdvisor
             // 
+            btnUpdateAdvisor.Anchor = AnchorStyles.Top;
             btnUpdateAdvisor.ForeColor = SystemColors.ActiveCaptionText;
             btnUpdateAdvisor.Location = new Point(510, 298);
             btnUpdateAdvisor.Name = "btnUpdateAdvisor";
@@ -122,6 +131,7 @@ namespace FYPManagementSystem.UI
             // 
             // CBDesignation
             // 
+            CBDesignation.Anchor = AnchorStyles.Top;
             CBDesignation.AccessibleName = "Designation";
             CBDesignation.FormattingEnabled = true;
             CBDesignation.Items.AddRange(new object[] { "Professor", "Associate Professor", "Assistant Professor", "Lecturer", "Industry Professional" });

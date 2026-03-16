@@ -1,4 +1,4 @@
-﻿namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     partial class MainDashBoard
     {
@@ -194,17 +194,19 @@
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Times New Roman", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(209, 9);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(283, 30);
+            label1.Size = new Size(684, 56);
             label1.TabIndex = 0;
             label1.Text = "FYP Management System";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Click += label1_Click;
             // 
             // panelMainContent
             // 
+            panelMainContent.Dock = DockStyle.Fill;
             panelMainContent.Location = new Point(159, 56);
             panelMainContent.Name = "panelMainContent";
             panelMainContent.Size = new Size(684, 394);

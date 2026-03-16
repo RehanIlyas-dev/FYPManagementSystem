@@ -6,7 +6,10 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FYPManagementSystem.UI
+using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.Classes;
+
+namespace FYPManagementSystem.Forms
 {
     public partial class UpdateStudent : Form
     {
@@ -62,7 +65,7 @@ namespace FYPManagementSystem.UI
                     genderId = 2;
                 }
 
-                FYPManagementSystem.Models.StudentModel updatedStudent = new FYPManagementSystem.Models.StudentModel
+                StudentModel updatedStudent = new StudentModel
                 {
                     PersonId = _personId,
                     FirstName = txtFirstName.Text,
@@ -74,8 +77,8 @@ namespace FYPManagementSystem.UI
                     RegistrationNo = txtRegNo.Text
                 };
 
-                FYPManagementSystem.BLL.StudentBL bll = new FYPManagementSystem.BLL.StudentBL();
-                bool isSuccess = bll.UpdateStudent(updatedStudent);
+                StudentBL data = new StudentBL();
+                bool isSuccess = data.UpdateStudent(updatedStudent);
 
                 if (isSuccess)
                 {

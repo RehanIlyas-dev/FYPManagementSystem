@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using FYPManagementSystem.Models;
-using FYPManagementSystem.BLL;
+using FYPManagementSystem.Classes;
+using FYPManagementSystem.BusinessLogic;
 
-namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     public partial class UpdateAdvisor : Form
     {
@@ -66,8 +66,8 @@ namespace FYPManagementSystem.UI
                     Salary = decimal.Parse(txtSalary.Text)
                 };
 
-                AdvisorBL bll = new AdvisorBL();
-                if (bll.UpdateAdvisor(adv))
+                AdvisorBL data = new AdvisorBL();
+                if (data.UpdateAdvisor(adv))
                 {
                     MessageBox.Show("Advisor updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

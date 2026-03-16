@@ -1,10 +1,9 @@
-﻿using FYPManagementSystem.BLL;
-using FYPManagementSystem.DAL;
-using FYPManagementSystem.Models;
+﻿using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.Classes;
 using System;
 using System.Windows.Forms;
 
-namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     public partial class AddStudent : Form
     {
@@ -58,8 +57,8 @@ namespace FYPManagementSystem.UI
                     RegistrationNo = txtRegNo.Text
                 };
 
-                StudentBL bll = new StudentBL();
-                bool isSuccess = bll.AddStudent(newStudent);
+                StudentBL data = new StudentBL();
+                bool isSuccess = data.AddStudent(newStudent);
 
                 if (isSuccess)
                 {

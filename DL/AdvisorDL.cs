@@ -1,9 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using FYPManagementSystem.Models;
+using FYPManagementSystem.Classes;
 
-namespace FYPManagementSystem.DAL
+namespace FYPManagementSystem.DataLayer
 {
     public class AdvisorDL
     {

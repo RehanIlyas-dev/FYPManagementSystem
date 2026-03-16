@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 
-namespace FYPManagementSystem.DAL
+namespace FYPManagementSystem.DataLayer
 {
     public class DatabaseConnection
     {

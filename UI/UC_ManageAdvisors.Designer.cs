@@ -1,4 +1,4 @@
-﻿namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     partial class UC_ManageAdvisors
     {
@@ -106,6 +106,7 @@
             dgvAdvisors.RowHeadersWidth = 51;
             dgvAdvisors.Size = new Size(1056, 574);
             dgvAdvisors.TabIndex = 1;
+            dgvAdvisors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // UC_ManageAdvisors
             // 

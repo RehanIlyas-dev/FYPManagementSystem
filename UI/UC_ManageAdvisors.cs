@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using FYPManagementSystem.BLL;
+using FYPManagementSystem.BusinessLogic;
 
-namespace FYPManagementSystem.UI
+namespace FYPManagementSystem.Forms
 {
     public partial class UC_ManageAdvisors : UserControl
     {
@@ -21,8 +21,8 @@ namespace FYPManagementSystem.UI
         {
             try
             {
-                AdvisorBL bll = new AdvisorBL();
-                DataTable dt = bll.GetAdvisors();
+                AdvisorBL data = new AdvisorBL();
+                DataTable dt = data.GetAdvisors();
                 dgvAdvisors.DataSource = dt;
 
                 if (dgvAdvisors.Columns["Id"] != null)
@@ -76,8 +76,8 @@ namespace FYPManagementSystem.UI
                 if (dialogResult == DialogResult.Yes)
                 {
                     int personId = Convert.ToInt32(dgvAdvisors.SelectedRows[0].Cells["Id"].Value);
-                    AdvisorBL bll = new AdvisorBL();
-                    if (bll.DeleteAdvisor(personId))
+                    AdvisorBL data = new AdvisorBL();
+                    if (data.DeleteAdvisor(personId))
                     {
                         MessageBox.Show("Advisor deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAdvisorData();

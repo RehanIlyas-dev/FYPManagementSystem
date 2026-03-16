@@ -1,10 +1,9 @@
-﻿using FYPManagementSystem.UI;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using FYPManagementSystem.BLL;
+using FYPManagementSystem.BusinessLogic;
 
-namespace FYPManagementSystem
+namespace FYPManagementSystem.Forms
 {
     public partial class uc_manage_student : UserControl
     {
@@ -18,8 +17,8 @@ namespace FYPManagementSystem
         {
             try
             {
-                StudentBL bll = new StudentBL();
-                DataTable dt = bll.GetStudents();
+                StudentBL data = new StudentBL();
+                DataTable dt = data.GetStudents();
 
                 dgvStudents.DataSource = dt;
 
@@ -74,8 +73,8 @@ namespace FYPManagementSystem
                 {
                     int personId = Convert.ToInt32(dgvStudents.SelectedRows[0].Cells["Id"].Value);
                     
-                    StudentBL bll = new StudentBL();
-                    bool isSuccess = bll.DeleteStudent(personId);
+                    StudentBL data = new StudentBL();
+                    bool isSuccess = data.DeleteStudent(personId);
 
                     if (isSuccess)
                     {

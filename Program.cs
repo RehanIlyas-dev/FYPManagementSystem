@@ -11,7 +11,7 @@ namespace FYPManagementSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string status = DAL.DatabaseConnection.TestConnection();
+            string status = DataLayer.DatabaseConnection.TestConnection();
             
             if (status == "Database connection successful")
             {
@@ -23,7 +23,7 @@ namespace FYPManagementSystem
                 return;
             }
 
-            Application.Run(new UI.MainDashBoard());
+            Application.Run(new Forms.MainDashBoard());
         }
     }
 }
