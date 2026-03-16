@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace FYPManagementSystem
 {
     internal static class Program
@@ -8,6 +10,19 @@ namespace FYPManagementSystem
             ApplicationConfiguration.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            string status = DAL.DatabaseConnection.TestConnection();
+            
+            if (status == "Database connection successful")
+            {
+                MessageBox.Show(status, "Connection Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed: " + status, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Application.Run(new UI.MainDashBoard());
         }
     }
