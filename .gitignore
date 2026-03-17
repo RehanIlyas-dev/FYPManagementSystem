@@ -361,6 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-FYPManagementSystem.csproj.user
-FYPManagementSystem.slnx
-FYPManagementSystem.sln
+Database.sql

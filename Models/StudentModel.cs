@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FYPManagementSystem.Classes
+namespace FYPManagementSystem.Models
 {
     public class StudentModel
     {

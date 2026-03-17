@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using FYPManagementSystem.UI.Main;
 
 namespace FYPManagementSystem
 {
@@ -23,7 +24,7 @@ namespace FYPManagementSystem
                 return;
             }
 
-            Application.Run(new Forms.MainDashBoard());
+            Application.Run(new MainDashBoard());
         }
     }
 }

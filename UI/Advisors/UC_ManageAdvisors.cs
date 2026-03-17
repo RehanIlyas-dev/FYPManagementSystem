@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,23 +6,37 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.Models;
 
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Advisors
 {
     public partial class UC_ManageAdvisors : UserControl
     {
         public UC_ManageAdvisors()
         {
             InitializeComponent();
-            LoadAdvisorData();
+            LoadAdvisors();
+            SetupSidebarButtons();
         }
 
-        public void LoadAdvisorData()
+        private void SetupSidebarButtons()
+        {
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(0, 100, 180);
+                    btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(0, 120, 215);
+                }
+            }
+        }
+
+        private void LoadAdvisors()
         {
             try
             {
-                AdvisorBL data = new AdvisorBL();
-                DataTable dt = data.GetAdvisors();
+                AdvisorBL bl = new AdvisorBL();
+                DataTable dt = bl.GetAdvisors();
                 dgvAdvisors.DataSource = dt;
 
                 if (dgvAdvisors.Columns["Id"] != null)
@@ -32,15 +46,15 @@ namespace FYPManagementSystem.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading advisors: " + ex.Message);
             }
         }
 
         private void btnAddAdvisor_Click(object sender, EventArgs e)
         {
-            AddAdvisor form = new AddAdvisor();
-            form.FormClosed += (s, args) => LoadAdvisorData();
-            form.ShowDialog();
+            AddAdvisor addForm = new AddAdvisor();
+            addForm.ShowDialog();
+            LoadAdvisors();
         }
 
         private void btnUpdateAdvisor_Click(object sender, EventArgs e)
@@ -48,7 +62,7 @@ namespace FYPManagementSystem.Forms
             if (dgvAdvisors.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvAdvisors.SelectedRows[0];
-                int id = Convert.ToInt32(row.Cells["Id"].Value);
+                int personId = Convert.ToInt32(row.Cells["Id"].Value);
                 string fname = row.Cells["FirstName"].Value.ToString();
                 string lname = row.Cells["LastName"].Value.ToString();
                 string contact = row.Cells["Contact"].Value.ToString();
@@ -58,13 +72,13 @@ namespace FYPManagementSystem.Forms
                 string designation = row.Cells["Designation"].Value.ToString();
                 decimal salary = Convert.ToDecimal(row.Cells["Salary"].Value);
 
-                UpdateAdvisor form = new UpdateAdvisor(id, fname, lname, contact, email, dob, gender, designation, salary);
-                form.FormClosed += (s, args) => LoadAdvisorData();
-                form.ShowDialog();
+                UpdateAdvisor updateForm = new UpdateAdvisor(personId, fname, lname, contact, email, dob, gender, designation, salary);
+                updateForm.ShowDialog();
+                LoadAdvisors();
             }
             else
             {
-                MessageBox.Show("Please select an entire row to update.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select an advisor to update.");
             }
         }
 
@@ -72,36 +86,33 @@ namespace FYPManagementSystem.Forms
         {
             if (dgvAdvisors.SelectedRows.Count > 0)
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this advisor?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.Yes)
+                int personId = Convert.ToInt32(dgvAdvisors.SelectedRows[0].Cells["Id"].Value);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this advisor?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+                if (result == DialogResult.Yes)
                 {
-                    int personId = Convert.ToInt32(dgvAdvisors.SelectedRows[0].Cells["Id"].Value);
-                    AdvisorBL data = new AdvisorBL();
-                    if (data.DeleteAdvisor(personId))
+                    AdvisorBL bl = new AdvisorBL();
+                    if (bl.DeleteAdvisor(personId))
                     {
-                        MessageBox.Show("Advisor deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadAdvisorData();
+                        MessageBox.Show("Advisor deleted successfully!");
+                        LoadAdvisors();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to delete advisor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Failed to delete advisor.");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please select an entire row to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select an advisor to delete.");
             }
         }
 
         private void btnClearForm_Click(object sender, EventArgs e)
         {
-            dgvAdvisors.ClearSelection();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
             
+            LoadAdvisors();
         }
     }
 }

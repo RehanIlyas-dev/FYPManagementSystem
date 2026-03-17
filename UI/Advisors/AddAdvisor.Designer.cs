@@ -1,4 +1,4 @@
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Advisors
 {
     partial class AddAdvisor
     {

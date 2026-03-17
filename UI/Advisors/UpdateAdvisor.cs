@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using FYPManagementSystem.Classes;
+using FYPManagementSystem.Models;
 using FYPManagementSystem.BusinessLogic;
 
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Advisors
 {
     public partial class UpdateAdvisor : Form
     {

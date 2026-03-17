@@ -1,5 +1,5 @@
 using System.Data;
-using FYPManagementSystem.Classes;
+using FYPManagementSystem.Models;
 using FYPManagementSystem.DataLayer;
 
 namespace FYPManagementSystem.BusinessLogic

@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="BL\GroupsDL.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Reports\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="DL\GroupsDL.cs" />
   </ItemGroup>
 
   <ItemGroup>
