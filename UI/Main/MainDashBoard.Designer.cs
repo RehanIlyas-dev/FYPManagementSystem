@@ -1,4 +1,4 @@
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Main
 {
     partial class MainDashBoard
     {
@@ -28,7 +28,6 @@ namespace FYPManagementSystem.Forms
             panelSideBar = new Panel();
             MarkSheetReport = new Button();
             ProjectRosterReport = new Button();
-            button8 = new Button();
             MarkEvaluations = new Button();
             AssignAdvisors = new Button();
             AssignProjects = new Button();
@@ -48,11 +47,10 @@ namespace FYPManagementSystem.Forms
             // 
             panelSideBar.AccessibleName = "PanelSideBar";
             panelSideBar.AllowDrop = true;
-            panelSideBar.BackColor = Color.Gray;
+            panelSideBar.BackColor = Color.FromArgb(44, 62, 80);
             panelSideBar.BackgroundImageLayout = ImageLayout.None;
             panelSideBar.Controls.Add(MarkSheetReport);
             panelSideBar.Controls.Add(ProjectRosterReport);
-            panelSideBar.Controls.Add(button8);
             panelSideBar.Controls.Add(MarkEvaluations);
             panelSideBar.Controls.Add(AssignAdvisors);
             panelSideBar.Controls.Add(AssignProjects);
@@ -62,143 +60,186 @@ namespace FYPManagementSystem.Forms
             panelSideBar.Controls.Add(ManageAdvisors);
             panelSideBar.Controls.Add(ManageStudents);
             panelSideBar.Dock = DockStyle.Left;
-            panelSideBar.ForeColor = SystemColors.Desktop;
+            panelSideBar.ForeColor = Color.White;
             panelSideBar.Location = new Point(0, 0);
             panelSideBar.Name = "panelSideBar";
-            panelSideBar.Size = new Size(159, 450);
+            panelSideBar.Size = new Size(200, 450);
             panelSideBar.TabIndex = 0;
             // 
             // MarkSheetReport
             // 
             MarkSheetReport.Dock = DockStyle.Top;
-            MarkSheetReport.Location = new Point(0, 259);
+            MarkSheetReport.FlatAppearance.BorderSize = 0;
+            MarkSheetReport.FlatStyle = FlatStyle.Flat;
+            MarkSheetReport.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            MarkSheetReport.Location = new Point(0, 360);
             MarkSheetReport.Name = "MarkSheetReport";
-            MarkSheetReport.Size = new Size(159, 28);
+            MarkSheetReport.Padding = new Padding(15, 0, 0, 0);
+            MarkSheetReport.Size = new Size(200, 40);
             MarkSheetReport.TabIndex = 10;
-            MarkSheetReport.Text = "MarkSheetReport";
+            MarkSheetReport.Text = "Mark Sheet Report";
+            MarkSheetReport.TextAlign = ContentAlignment.MiddleLeft;
             MarkSheetReport.UseVisualStyleBackColor = true;
             // 
             // ProjectRosterReport
             // 
             ProjectRosterReport.Dock = DockStyle.Top;
-            ProjectRosterReport.Location = new Point(0, 230);
+            ProjectRosterReport.FlatAppearance.BorderSize = 0;
+            ProjectRosterReport.FlatStyle = FlatStyle.Flat;
+            ProjectRosterReport.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            ProjectRosterReport.Location = new Point(0, 320);
             ProjectRosterReport.Name = "ProjectRosterReport";
-            ProjectRosterReport.Size = new Size(159, 29);
+            ProjectRosterReport.Padding = new Padding(15, 0, 0, 0);
+            ProjectRosterReport.Size = new Size(200, 40);
             ProjectRosterReport.TabIndex = 9;
-            ProjectRosterReport.Text = "ProjectRosterReport";
+            ProjectRosterReport.Text = "Project Roster";
+            ProjectRosterReport.TextAlign = ContentAlignment.MiddleLeft;
             ProjectRosterReport.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(482, -11);
-            button8.Name = "button8";
-            button8.Size = new Size(94, 29);
-            button8.TabIndex = 8;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
             // 
             // MarkEvaluations
             // 
             MarkEvaluations.Dock = DockStyle.Top;
-            MarkEvaluations.Location = new Point(0, 201);
+            MarkEvaluations.FlatAppearance.BorderSize = 0;
+            MarkEvaluations.FlatStyle = FlatStyle.Flat;
+            MarkEvaluations.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            MarkEvaluations.Location = new Point(0, 280);
             MarkEvaluations.Name = "MarkEvaluations";
-            MarkEvaluations.Size = new Size(159, 29);
+            MarkEvaluations.Padding = new Padding(15, 0, 0, 0);
+            MarkEvaluations.Size = new Size(200, 40);
             MarkEvaluations.TabIndex = 7;
-            MarkEvaluations.Text = "MarkEvaluations";
+            MarkEvaluations.Text = "Mark Evaluation";
+            MarkEvaluations.TextAlign = ContentAlignment.MiddleLeft;
             MarkEvaluations.UseVisualStyleBackColor = true;
             // 
             // AssignAdvisors
             // 
             AssignAdvisors.Dock = DockStyle.Top;
-            AssignAdvisors.Location = new Point(0, 172);
+            AssignAdvisors.FlatAppearance.BorderSize = 0;
+            AssignAdvisors.FlatStyle = FlatStyle.Flat;
+            AssignAdvisors.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            AssignAdvisors.Location = new Point(0, 240);
             AssignAdvisors.Name = "AssignAdvisors";
-            AssignAdvisors.Size = new Size(159, 29);
+            AssignAdvisors.Padding = new Padding(15, 0, 0, 0);
+            AssignAdvisors.Size = new Size(200, 40);
             AssignAdvisors.TabIndex = 6;
-            AssignAdvisors.Text = "AssignAdvisors";
+            AssignAdvisors.Text = "Assign Advisors";
+            AssignAdvisors.TextAlign = ContentAlignment.MiddleLeft;
             AssignAdvisors.UseVisualStyleBackColor = true;
             // 
             // AssignProjects
             // 
             AssignProjects.Dock = DockStyle.Top;
-            AssignProjects.Location = new Point(0, 143);
+            AssignProjects.FlatAppearance.BorderSize = 0;
+            AssignProjects.FlatStyle = FlatStyle.Flat;
+            AssignProjects.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            AssignProjects.Location = new Point(0, 200);
             AssignProjects.Name = "AssignProjects";
-            AssignProjects.Size = new Size(159, 29);
+            AssignProjects.Padding = new Padding(15, 0, 0, 0);
+            AssignProjects.Size = new Size(200, 40);
             AssignProjects.TabIndex = 5;
-            AssignProjects.Text = "AssignProjects";
+            AssignProjects.Text = "Assign Projects";
+            AssignProjects.TextAlign = ContentAlignment.MiddleLeft;
             AssignProjects.UseVisualStyleBackColor = true;
             AssignProjects.Click += button5_Click;
             // 
             // FormStudentGroups
             // 
             FormStudentGroups.Dock = DockStyle.Top;
-            FormStudentGroups.Location = new Point(0, 114);
+            FormStudentGroups.FlatAppearance.BorderSize = 0;
+            FormStudentGroups.FlatStyle = FlatStyle.Flat;
+            FormStudentGroups.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            FormStudentGroups.Location = new Point(0, 160);
             FormStudentGroups.Name = "FormStudentGroups";
-            FormStudentGroups.Size = new Size(159, 29);
+            FormStudentGroups.Padding = new Padding(15, 0, 0, 0);
+            FormStudentGroups.Size = new Size(200, 40);
             FormStudentGroups.TabIndex = 4;
-            FormStudentGroups.Text = "FormStudentGroups";
+            FormStudentGroups.Text = "Manage Groups";
+            FormStudentGroups.TextAlign = ContentAlignment.MiddleLeft;
             FormStudentGroups.UseVisualStyleBackColor = true;
+            FormStudentGroups.Click += FormStudentGroups_Click;
             // 
             // ManageEvaluations
             // 
             ManageEvaluations.Dock = DockStyle.Top;
-            ManageEvaluations.Location = new Point(0, 85);
+            ManageEvaluations.FlatAppearance.BorderSize = 0;
+            ManageEvaluations.FlatStyle = FlatStyle.Flat;
+            ManageEvaluations.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            ManageEvaluations.Location = new Point(0, 120);
             ManageEvaluations.Name = "ManageEvaluations";
-            ManageEvaluations.Size = new Size(159, 29);
+            ManageEvaluations.Padding = new Padding(15, 0, 0, 0);
+            ManageEvaluations.Size = new Size(200, 40);
             ManageEvaluations.TabIndex = 3;
-            ManageEvaluations.Text = "ManageEvaluations";
+            ManageEvaluations.Text = "Evaluations";
+            ManageEvaluations.TextAlign = ContentAlignment.MiddleLeft;
             ManageEvaluations.UseVisualStyleBackColor = true;
             // 
             // ManageProjects
             // 
             ManageProjects.Dock = DockStyle.Top;
-            ManageProjects.Location = new Point(0, 56);
+            ManageProjects.FlatAppearance.BorderSize = 0;
+            ManageProjects.FlatStyle = FlatStyle.Flat;
+            ManageProjects.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            ManageProjects.Location = new Point(0, 80);
             ManageProjects.Name = "ManageProjects";
-            ManageProjects.Size = new Size(159, 29);
+            ManageProjects.Padding = new Padding(15, 0, 0, 0);
+            ManageProjects.Size = new Size(200, 40);
             ManageProjects.TabIndex = 2;
-            ManageProjects.Text = "ManageProjects";
+            ManageProjects.Text = "Projects";
+            ManageProjects.TextAlign = ContentAlignment.MiddleLeft;
             ManageProjects.UseVisualStyleBackColor = true;
+            ManageProjects.Click += ManageProjects_Click;
             // 
             // ManageAdvisors
             // 
             ManageAdvisors.Dock = DockStyle.Top;
-            ManageAdvisors.Location = new Point(0, 27);
+            ManageAdvisors.FlatAppearance.BorderSize = 0;
+            ManageAdvisors.FlatStyle = FlatStyle.Flat;
+            ManageAdvisors.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            ManageAdvisors.Location = new Point(0, 40);
             ManageAdvisors.Name = "ManageAdvisors";
-            ManageAdvisors.Size = new Size(159, 29);
+            ManageAdvisors.Padding = new Padding(15, 0, 0, 0);
+            ManageAdvisors.Size = new Size(200, 40);
             ManageAdvisors.TabIndex = 1;
-            ManageAdvisors.Text = "ManageAdvisors";
+            ManageAdvisors.Text = "Advisors";
+            ManageAdvisors.TextAlign = ContentAlignment.MiddleLeft;
             ManageAdvisors.UseVisualStyleBackColor = true;
             ManageAdvisors.Click += ManageAdvisors_Click;
             // 
             // ManageStudents
             // 
             ManageStudents.Dock = DockStyle.Top;
+            ManageStudents.FlatAppearance.BorderSize = 0;
+            ManageStudents.FlatStyle = FlatStyle.Flat;
+            ManageStudents.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             ManageStudents.Location = new Point(0, 0);
             ManageStudents.Name = "ManageStudents";
-            ManageStudents.Size = new Size(159, 27);
+            ManageStudents.Padding = new Padding(15, 0, 0, 0);
+            ManageStudents.Size = new Size(200, 40);
             ManageStudents.TabIndex = 0;
-            ManageStudents.Text = "ManageStudents";
-            ManageStudents.TextAlign = ContentAlignment.TopCenter;
+            ManageStudents.Text = "Students";
+            ManageStudents.TextAlign = ContentAlignment.MiddleLeft;
             ManageStudents.UseVisualStyleBackColor = true;
             ManageStudents.Click += ManageStudents_Click;
             // 
             // MainHeader
             // 
+            MainHeader.BackColor = Color.White;
             MainHeader.Controls.Add(label1);
             MainHeader.Dock = DockStyle.Top;
-            MainHeader.ForeColor = Color.DarkCyan;
+            MainHeader.ForeColor = Color.FromArgb(44, 62, 80);
             MainHeader.ImeMode = ImeMode.Disable;
-            MainHeader.Location = new Point(159, 0);
+            MainHeader.Location = new Point(200, 0);
             MainHeader.Name = "MainHeader";
-            MainHeader.Size = new Size(684, 56);
+            MainHeader.Size = new Size(643, 60);
             MainHeader.TabIndex = 1;
             // 
             // label1
             // 
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Times New Roman", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(684, 56);
+            label1.Size = new Size(643, 60);
             label1.TabIndex = 0;
             label1.Text = "FYP Management System";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -206,10 +247,11 @@ namespace FYPManagementSystem.Forms
             // 
             // panelMainContent
             // 
+            panelMainContent.BackColor = Color.FromArgb(245, 247, 250);
             panelMainContent.Dock = DockStyle.Fill;
-            panelMainContent.Location = new Point(159, 56);
+            panelMainContent.Location = new Point(200, 60);
             panelMainContent.Name = "panelMainContent";
-            panelMainContent.Size = new Size(684, 394);
+            panelMainContent.Size = new Size(643, 390);
             panelMainContent.TabIndex = 2;
             panelMainContent.Paint += panelMainContent_Paint;
             // 
@@ -222,11 +264,10 @@ namespace FYPManagementSystem.Forms
             Controls.Add(MainHeader);
             Controls.Add(panelSideBar);
             Name = "MainDashBoard";
-            Text = "MainDashBoard";
+            Text = "FYP Portal";
             Load += MainDashBoard_Load;
             panelSideBar.ResumeLayout(false);
             MainHeader.ResumeLayout(false);
-            MainHeader.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -243,7 +284,6 @@ namespace FYPManagementSystem.Forms
         private Button AssignProjects;
         private Button MarkSheetReport;
         private Button ProjectRosterReport;
-        private Button button8;
         private Button MarkEvaluations;
         private Button AssignAdvisors;
         private Panel panelMainContent;

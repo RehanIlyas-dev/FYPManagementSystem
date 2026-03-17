@@ -1,6 +1,6 @@
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Students
 {
-    partial class UpdateStudent
+    partial class AddStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace FYPManagementSystem.Forms
             label1 = new Label();
             dtp01 = new DateTimePicker();
             CBGender = new ComboBox();
-            btnUpdateStudent = new Button();
+            btnAddStudent = new Button();
             SuspendLayout();
             // 
             // txtFirstName
@@ -47,6 +47,7 @@ namespace FYPManagementSystem.Forms
             txtFirstName.PlaceholderText = "FirstName";
             txtFirstName.Size = new Size(125, 27);
             txtFirstName.TabIndex = 0;
+            txtFirstName.TextChanged += textBox1_TextChanged;
             // 
             // txtLastName
             // 
@@ -56,6 +57,7 @@ namespace FYPManagementSystem.Forms
             txtLastName.PlaceholderText = "LastName";
             txtLastName.Size = new Size(125, 27);
             txtLastName.TabIndex = 1;
+            txtLastName.TextChanged += textBox2_TextChanged;
             // 
             // txtContact
             // 
@@ -65,6 +67,7 @@ namespace FYPManagementSystem.Forms
             txtContact.PlaceholderText = "Contact";
             txtContact.Size = new Size(125, 27);
             txtContact.TabIndex = 2;
+            txtContact.TextChanged += textBox3_TextChanged;
             // 
             // txtEmail
             // 
@@ -74,6 +77,7 @@ namespace FYPManagementSystem.Forms
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(125, 27);
             txtEmail.TabIndex = 3;
+            txtEmail.TextChanged += textBox4_TextChanged;
             // 
             // txtRegNo
             // 
@@ -83,6 +87,7 @@ namespace FYPManagementSystem.Forms
             txtRegNo.PlaceholderText = "Registration No";
             txtRegNo.Size = new Size(125, 27);
             txtRegNo.TabIndex = 4;
+            txtRegNo.TextChanged += textBox5_TextChanged;
             // 
             // label1
             // 
@@ -90,11 +95,12 @@ namespace FYPManagementSystem.Forms
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.RosyBrown;
-            label1.Location = new Point(410, 9);
+            label1.Location = new Point(433, 9);
             label1.Name = "label1";
-            label1.Size = new Size(410, 68);
+            label1.Size = new Size(330, 68);
             label1.TabIndex = 5;
-            label1.Text = "Update Student";
+            label1.Text = "Add Student";
+            label1.Click += label1_Click;
             // 
             // dtp01
             // 
@@ -116,24 +122,24 @@ namespace FYPManagementSystem.Forms
             CBGender.TabIndex = 7;
             CBGender.Text = "Gender";
             // 
-            // btnUpdateStudent
+            // btnAddStudent
             // 
-            btnUpdateStudent.Anchor = AnchorStyles.Top;
-            btnUpdateStudent.ForeColor = SystemColors.ActiveCaptionText;
-            btnUpdateStudent.Location = new Point(510, 298);
-            btnUpdateStudent.Name = "btnUpdateStudent";
-            btnUpdateStudent.Size = new Size(151, 68);
-            btnUpdateStudent.TabIndex = 8;
-            btnUpdateStudent.Text = "Update Student";
-            btnUpdateStudent.UseVisualStyleBackColor = true;
-            btnUpdateStudent.Click += btnUpdateStudent_Click;
+            btnAddStudent.Anchor = AnchorStyles.Top;
+            btnAddStudent.ForeColor = SystemColors.ActiveCaptionText;
+            btnAddStudent.Location = new Point(510, 298);
+            btnAddStudent.Name = "btnAddStudent";
+            btnAddStudent.Size = new Size(151, 68);
+            btnAddStudent.TabIndex = 8;
+            btnAddStudent.Text = "Add Student";
+            btnAddStudent.UseVisualStyleBackColor = true;
+            btnAddStudent.Click += btnAddStudent_Click;
             // 
-            // UpdateStudent
+            // AddStudent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1197, 450);
-            Controls.Add(btnUpdateStudent);
+            Controls.Add(btnAddStudent);
             Controls.Add(CBGender);
             Controls.Add(dtp01);
             Controls.Add(label1);
@@ -142,9 +148,8 @@ namespace FYPManagementSystem.Forms
             Controls.Add(txtContact);
             Controls.Add(txtLastName);
             Controls.Add(txtFirstName);
-            Name = "UpdateStudent";
-            Text = "UpdateStudent";
-            Load += UpdateStudent_Load;
+            Name = "AddStudent";
+            Text = "AddStudent";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,6 +164,6 @@ namespace FYPManagementSystem.Forms
         private Label label1;
         private DateTimePicker dtp01;
         private ComboBox CBGender;
-        private Button btnUpdateStudent;
+        private Button btnAddStudent;
     }
 }

@@ -1,16 +1,30 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Windows.Forms;
 using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.Models;
 
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Students
 {
-    public partial class uc_manage_student : UserControl
+    public partial class UC_ManageStudents : UserControl
     {
-        public uc_manage_student()
+        public UC_ManageStudents()
         {
             InitializeComponent();
             LoadStudentData();
+            SetupSidebarButtons();
+        }
+
+        private void SetupSidebarButtons()
+        {
+            foreach (Control ctrl in panel1.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(0, 100, 180);
+                    btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(0, 120, 215);
+                }
+            }
         }
 
         public void LoadStudentData()
@@ -100,6 +114,6 @@ namespace FYPManagementSystem.Forms
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+        private void dgvStudents_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

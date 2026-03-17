@@ -1,9 +1,9 @@
-﻿using FYPManagementSystem.BusinessLogic;
-using FYPManagementSystem.Classes;
+using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.Models;
 using System;
 using System.Windows.Forms;
 
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Students
 {
     public partial class AddStudent : Form
     {

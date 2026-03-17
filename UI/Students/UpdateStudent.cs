@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 
 using FYPManagementSystem.BusinessLogic;
-using FYPManagementSystem.Classes;
+using FYPManagementSystem.Models;
 
-namespace FYPManagementSystem.Forms
+namespace FYPManagementSystem.UI.Students
 {
     public partial class UpdateStudent : Form
     {
