@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using FYPManagementSystem.BusinessLogic;
-using FYPManagementSystem.Models;
+using FYPManagementSystem.BL;
 
 namespace FYPManagementSystem.UI.Advisors
 {
@@ -25,10 +21,22 @@ namespace FYPManagementSystem.UI.Advisors
             {
                 if (ctrl is Button btn)
                 {
-                    btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(0, 100, 180);
-                    btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(0, 120, 215);
+                    btn.MouseEnter += Button_MouseEnter;
+                    btn.MouseLeave += Button_MouseLeave;
                 }
             }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 100, 180);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 120, 215);
         }
 
         private void LoadAdvisors()
@@ -87,31 +95,30 @@ namespace FYPManagementSystem.UI.Advisors
             if (dgvAdvisors.SelectedRows.Count > 0)
             {
                 int personId = Convert.ToInt32(dgvAdvisors.SelectedRows[0].Cells["Id"].Value);
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this advisor?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this advisor?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 
                 if (result == DialogResult.Yes)
                 {
                     AdvisorBL bl = new AdvisorBL();
                     if (bl.DeleteAdvisor(personId))
                     {
-                        MessageBox.Show("Advisor deleted successfully!");
+                        MessageBox.Show("Advisor deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadAdvisors();
                     }
                     else
                     {
-                        MessageBox.Show("Failed to delete advisor.");
+                        MessageBox.Show("Failed to delete advisor.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Please select an advisor to delete.");
+                MessageBox.Show("Please select an advisor to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnClearForm_Click(object sender, EventArgs e)
         {
-            
             LoadAdvisors();
         }
     }

@@ -1,12 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-
-using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.BL;
 using FYPManagementSystem.Models;
 
 namespace FYPManagementSystem.UI.Students
@@ -30,7 +24,6 @@ namespace FYPManagementSystem.UI.Students
         public UpdateStudent(int personId, string regNo, string firstName, string lastName, string contact, string email, DateTime dob, string gender)
         {
             InitializeComponent();
-            
             _personId = personId;
             _regNo = regNo;
             _firstName = firstName;
@@ -65,17 +58,15 @@ namespace FYPManagementSystem.UI.Students
                     genderId = 2;
                 }
 
-                StudentModel updatedStudent = new StudentModel
-                {
-                    PersonId = _personId,
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Contact = txtContact.Text,
-                    Email = txtEmail.Text,
-                    DateOfBirth = dtp01.Value,
-                    GenderId = genderId,
-                    RegistrationNo = txtRegNo.Text
-                };
+                StudentModel updatedStudent = new StudentModel();
+                updatedStudent.PersonId = _personId;
+                updatedStudent.FirstName = txtFirstName.Text;
+                updatedStudent.LastName = txtLastName.Text;
+                updatedStudent.Contact = txtContact.Text;
+                updatedStudent.Email = txtEmail.Text;
+                updatedStudent.DateOfBirth = dtp01.Value;
+                updatedStudent.GenderId = genderId;
+                updatedStudent.RegistrationNo = txtRegNo.Text;
 
                 StudentBL data = new StudentBL();
                 bool isSuccess = data.UpdateStudent(updatedStudent);

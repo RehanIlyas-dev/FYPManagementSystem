@@ -26,8 +26,7 @@ namespace FYPManagementSystem.UI.Main
         private void InitializeComponent()
         {
             panelSideBar = new Panel();
-            MarkSheetReport = new Button();
-            ProjectRosterReport = new Button();
+            Reports = new Button();
             MarkEvaluations = new Button();
             AssignAdvisors = new Button();
             AssignProjects = new Button();
@@ -49,8 +48,7 @@ namespace FYPManagementSystem.UI.Main
             panelSideBar.AllowDrop = true;
             panelSideBar.BackColor = Color.FromArgb(44, 62, 80);
             panelSideBar.BackgroundImageLayout = ImageLayout.None;
-            panelSideBar.Controls.Add(MarkSheetReport);
-            panelSideBar.Controls.Add(ProjectRosterReport);
+            panelSideBar.Controls.Add(Reports);
             panelSideBar.Controls.Add(MarkEvaluations);
             panelSideBar.Controls.Add(AssignAdvisors);
             panelSideBar.Controls.Add(AssignProjects);
@@ -66,35 +64,21 @@ namespace FYPManagementSystem.UI.Main
             panelSideBar.Size = new Size(200, 450);
             panelSideBar.TabIndex = 0;
             // 
-            // MarkSheetReport
+            // Reports
             // 
-            MarkSheetReport.Dock = DockStyle.Top;
-            MarkSheetReport.FlatAppearance.BorderSize = 0;
-            MarkSheetReport.FlatStyle = FlatStyle.Flat;
-            MarkSheetReport.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            MarkSheetReport.Location = new Point(0, 360);
-            MarkSheetReport.Name = "MarkSheetReport";
-            MarkSheetReport.Padding = new Padding(15, 0, 0, 0);
-            MarkSheetReport.Size = new Size(200, 40);
-            MarkSheetReport.TabIndex = 10;
-            MarkSheetReport.Text = "Mark Sheet Report";
-            MarkSheetReport.TextAlign = ContentAlignment.MiddleLeft;
-            MarkSheetReport.UseVisualStyleBackColor = true;
-            // 
-            // ProjectRosterReport
-            // 
-            ProjectRosterReport.Dock = DockStyle.Top;
-            ProjectRosterReport.FlatAppearance.BorderSize = 0;
-            ProjectRosterReport.FlatStyle = FlatStyle.Flat;
-            ProjectRosterReport.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            ProjectRosterReport.Location = new Point(0, 320);
-            ProjectRosterReport.Name = "ProjectRosterReport";
-            ProjectRosterReport.Padding = new Padding(15, 0, 0, 0);
-            ProjectRosterReport.Size = new Size(200, 40);
-            ProjectRosterReport.TabIndex = 9;
-            ProjectRosterReport.Text = "Project Roster";
-            ProjectRosterReport.TextAlign = ContentAlignment.MiddleLeft;
-            ProjectRosterReport.UseVisualStyleBackColor = true;
+            Reports.Dock = DockStyle.Top;
+            Reports.FlatAppearance.BorderSize = 0;
+            Reports.FlatStyle = FlatStyle.Flat;
+            Reports.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            Reports.Location = new Point(0, 320);
+            Reports.Name = "Reports";
+            Reports.Padding = new Padding(15, 0, 0, 0);
+            Reports.Size = new Size(200, 40);
+            Reports.TabIndex = 10;
+            Reports.Text = "Standard Reports";
+            Reports.TextAlign = ContentAlignment.MiddleLeft;
+            Reports.UseVisualStyleBackColor = true;
+            Reports.Click += Reports_Click;
             // 
             // MarkEvaluations
             // 
@@ -110,6 +94,7 @@ namespace FYPManagementSystem.UI.Main
             MarkEvaluations.Text = "Mark Evaluation";
             MarkEvaluations.TextAlign = ContentAlignment.MiddleLeft;
             MarkEvaluations.UseVisualStyleBackColor = true;
+            MarkEvaluations.Click += MarkEvaluations_Click;
             // 
             // AssignAdvisors
             // 
@@ -125,6 +110,8 @@ namespace FYPManagementSystem.UI.Main
             AssignAdvisors.Text = "Assign Advisors";
             AssignAdvisors.TextAlign = ContentAlignment.MiddleLeft;
             AssignAdvisors.UseVisualStyleBackColor = true;
+            AssignAdvisors.Click += AssignAdvisors_Click;
+
             // 
             // AssignProjects
             // 
@@ -172,6 +159,7 @@ namespace FYPManagementSystem.UI.Main
             ManageEvaluations.Text = "Evaluations";
             ManageEvaluations.TextAlign = ContentAlignment.MiddleLeft;
             ManageEvaluations.UseVisualStyleBackColor = true;
+            ManageEvaluations.Click += ManageEvaluations_Click;
             // 
             // ManageProjects
             // 
@@ -282,10 +270,9 @@ namespace FYPManagementSystem.UI.Main
         private Button ManageEvaluations;
         private Button ManageProjects;
         private Button AssignProjects;
-        private Button MarkSheetReport;
-        private Button ProjectRosterReport;
         private Button MarkEvaluations;
         private Button AssignAdvisors;
+        private Button Reports;
         private Panel panelMainContent;
     }
 }

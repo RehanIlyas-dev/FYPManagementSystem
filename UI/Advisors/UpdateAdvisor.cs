@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 using FYPManagementSystem.Models;
-using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.BL;
 
 namespace FYPManagementSystem.UI.Advisors
 {
@@ -53,18 +53,16 @@ namespace FYPManagementSystem.UI.Advisors
                 else if (CBDesignation.Text == "Lecturer") designationId = 9;
                 else if (CBDesignation.Text == "Industry Professional") designationId = 10;
 
-                AdvisorModel adv = new AdvisorModel
-                {
-                    PersonId = advisorId,
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Contact = txtContact.Text,
-                    Email = txtEmail.Text,
-                    DateOfBirth = dtp01.Value,
-                    GenderId = genderId,
-                    DesignationId = designationId,
-                    Salary = decimal.Parse(txtSalary.Text)
-                };
+                AdvisorModel adv = new AdvisorModel();
+                adv.PersonId = advisorId;
+                adv.FirstName = txtFirstName.Text;
+                adv.LastName = txtLastName.Text;
+                adv.Contact = txtContact.Text;
+                adv.Email = txtEmail.Text;
+                adv.DateOfBirth = dtp01.Value;
+                adv.GenderId = genderId;
+                adv.DesignationId = designationId;
+                adv.Salary = decimal.Parse(txtSalary.Text);
 
                 AdvisorBL data = new AdvisorBL();
                 if (data.UpdateAdvisor(adv))

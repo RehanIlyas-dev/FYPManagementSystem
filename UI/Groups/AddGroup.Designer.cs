@@ -15,10 +15,22 @@ namespace FYPManagementSystem.UI.Groups
 
         private void InitializeComponent()
         {
+            pnlHeader = new Panel();
             clbStudents = new CheckedListBox();
             btnCreateGroup = new Button();
             lblTitle = new Label();
+            pnlHeader.SuspendLayout();
             SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(0, 120, 215);
+            pnlHeader.Controls.Add(lblTitle);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(800, 100);
+            pnlHeader.TabIndex = 3;
             // 
             // clbStudents
             // 
@@ -32,21 +44,27 @@ namespace FYPManagementSystem.UI.Groups
             // btnCreateGroup
             // 
             btnCreateGroup.Anchor = AnchorStyles.Top;
-            btnCreateGroup.Location = new Point(310, 310);
+            btnCreateGroup.BackColor = Color.FromArgb(0, 120, 215);
+            btnCreateGroup.FlatAppearance.BorderSize = 0;
+            btnCreateGroup.FlatStyle = FlatStyle.Flat;
+            btnCreateGroup.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnCreateGroup.ForeColor = Color.White;
+            btnCreateGroup.Location = new Point(320, 310);
             btnCreateGroup.Name = "btnCreateGroup";
             btnCreateGroup.Size = new Size(160, 50);
             btnCreateGroup.TabIndex = 2;
             btnCreateGroup.Text = "Create Group";
-            btnCreateGroup.UseVisualStyleBackColor = true;
+            btnCreateGroup.UseVisualStyleBackColor = false;
             btnCreateGroup.Click += btnCreateGroup_Click;
+
             // 
             // lblTitle
             // 
-            lblTitle.Anchor = AnchorStyles.Top;
+            lblTitle.Anchor = AnchorStyles.None;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.RosyBrown;
-            lblTitle.Location = new Point(260, 20);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(252, 16);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(300, 68);
             lblTitle.TabIndex = 0;
@@ -56,16 +74,22 @@ namespace FYPManagementSystem.UI.Groups
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(pnlHeader);
             Controls.Add(btnCreateGroup);
             Controls.Add(clbStudents);
-            Controls.Add(lblTitle);
             Name = "AddGroup";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Add Group";
+
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
+        private Panel pnlHeader;
         private CheckedListBox clbStudents;
         private Button btnCreateGroup;
         private Label lblTitle;

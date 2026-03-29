@@ -1,7 +1,8 @@
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
-using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.BL;
 
 namespace FYPManagementSystem.UI.Groups
 {
@@ -20,10 +21,22 @@ namespace FYPManagementSystem.UI.Groups
             {
                 if (ctrl is Button btn)
                 {
-                    btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(0, 100, 180);
-                    btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(0, 120, 215);
+                    btn.MouseEnter += Button_MouseEnter;
+                    btn.MouseLeave += Button_MouseLeave;
                 }
             }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 100, 180);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 120, 215);
         }
 
         private void LoadGroups()

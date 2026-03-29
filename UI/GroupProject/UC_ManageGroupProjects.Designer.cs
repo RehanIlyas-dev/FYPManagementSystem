@@ -1,4 +1,4 @@
-namespace FYPManagementSystem.UI.Groups
+namespace FYPManagementSystem.UI.GroupProject
 {
     partial class UC_ManageGroupProjects
     {
@@ -87,7 +87,8 @@ namespace FYPManagementSystem.UI.Groups
             dgvAssignments.Size = new Size(990, 600);
             dgvAssignments.TabIndex = 1;
             dgvAssignments.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvAssignments.DefaultCellStyle.SelectionBackColor = Color.WhiteSmoke;
+            dgvAssignments.GridColor = Color.FromArgb(224, 224, 224);
+            dgvAssignments.DefaultCellStyle.SelectionBackColor = Color.White;
             dgvAssignments.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvAssignments.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 249, 250);
             // 

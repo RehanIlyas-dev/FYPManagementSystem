@@ -28,11 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            pnlHeader = new Panel();
             txtTitle = new TextBox();
             txtDescription = new RichTextBox();
             lblTitle = new Label();
             btnAddProject = new Button();
+            pnlHeader.SuspendLayout();
             SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(0, 120, 215);
+            pnlHeader.Controls.Add(lblTitle);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(800, 100);
+            pnlHeader.TabIndex = 4;
             // 
             // txtTitle
             // 
@@ -55,11 +67,11 @@
             // 
             // lblTitle
             // 
-            lblTitle.Anchor = AnchorStyles.Top;
+            lblTitle.Anchor = AnchorStyles.None;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.RosyBrown;
-            lblTitle.Location = new Point(260, 20);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(241, 16);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(317, 68);
             lblTitle.TabIndex = 0;
@@ -68,32 +80,44 @@
             // btnAddProject
             // 
             btnAddProject.Anchor = AnchorStyles.Top;
-            btnAddProject.Location = new Point(310, 310);
+            btnAddProject.BackColor = Color.FromArgb(0, 120, 215);
+            btnAddProject.FlatAppearance.BorderSize = 0;
+            btnAddProject.FlatStyle = FlatStyle.Flat;
+            btnAddProject.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnAddProject.ForeColor = Color.White;
+            btnAddProject.Location = new Point(320, 310);
             btnAddProject.Name = "btnAddProject";
             btnAddProject.Size = new Size(160, 50);
             btnAddProject.TabIndex = 3;
             btnAddProject.Text = "Add Project";
-            btnAddProject.UseVisualStyleBackColor = true;
+            btnAddProject.UseVisualStyleBackColor = false;
             btnAddProject.Click += btnAddProject_Click;
+
             // 
             // Addproject
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(pnlHeader);
             Controls.Add(btnAddProject);
             Controls.Add(txtDescription);
             Controls.Add(txtTitle);
-            Controls.Add(lblTitle);
             Name = "Addproject";
-            Text = "Addproject";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Add Project";
+
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblTitle;
+        private Panel pnlHeader;
+        private Label lblTitle;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.Button btnAddProject;

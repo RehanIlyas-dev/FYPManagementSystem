@@ -1,7 +1,7 @@
-using FYPManagementSystem.BusinessLogic;
-using FYPManagementSystem.Models;
 using System;
 using System.Windows.Forms;
+using FYPManagementSystem.Models;
+using FYPManagementSystem.BL;
 
 namespace FYPManagementSystem.UI.Students
 {
@@ -10,30 +10,6 @@ namespace FYPManagementSystem.UI.Students
         public AddStudent()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -46,16 +22,14 @@ namespace FYPManagementSystem.UI.Students
                     genderId = 2;
                 }
 
-                StudentModel newStudent = new StudentModel
-                {
-                    FirstName = txtFirstName.Text,
-                    LastName = txtLastName.Text,
-                    Contact = txtContact.Text,
-                    Email = txtEmail.Text,
-                    DateOfBirth = dtp01.Value,
-                    GenderId = genderId,
-                    RegistrationNo = txtRegNo.Text
-                };
+                StudentModel newStudent = new StudentModel();
+                newStudent.FirstName = txtFirstName.Text;
+                newStudent.LastName = txtLastName.Text;
+                newStudent.Contact = txtContact.Text;
+                newStudent.Email = txtEmail.Text;
+                newStudent.DateOfBirth = dtp01.Value;
+                newStudent.GenderId = genderId;
+                newStudent.RegistrationNo = txtRegNo.Text;
 
                 StudentBL data = new StudentBL();
                 bool isSuccess = data.AddStudent(newStudent);
@@ -75,5 +49,11 @@ namespace FYPManagementSystem.UI.Students
                 MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void textBox3_TextChanged(object sender, EventArgs e) { }
+        private void textBox4_TextChanged(object sender, EventArgs e) { }
+        private void textBox5_TextChanged(object sender, EventArgs e) { }
     }
 }

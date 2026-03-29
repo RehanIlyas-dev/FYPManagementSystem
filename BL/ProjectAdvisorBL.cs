@@ -1,10 +1,10 @@
 ﻿using System.Data;
 using FYPManagementSystem.Models;
-using FYPManagementSystem.DAL;
+using FYPManagementSystem.DL;
 
-namespace FYPManagementSystem.BLL
+namespace FYPManagementSystem.BL
 {
-    public class ProjectAdvisorBLL
+    public class ProjectAdvisorBL
     {
         private ProjectAdvisorDL dl = new ProjectAdvisorDL();
 
@@ -27,6 +27,15 @@ namespace FYPManagementSystem.BLL
         {
             return dl.GetAdvisorRoles();
         }
+
+        public DataTable GetAssignedAdvisors()
+        {
+            return dl.GetAssignedAdvisors();
+        }
+
+        public bool RemoveAssignment(int projectId, int advisorId)
+        {
+            return dl.RemoveAssignment(projectId, advisorId);
+        }
     }
 }
-

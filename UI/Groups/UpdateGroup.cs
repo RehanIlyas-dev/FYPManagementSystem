@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.BL;
 using FYPManagementSystem.Models;
 
 namespace FYPManagementSystem.UI.Groups
@@ -24,7 +24,6 @@ namespace FYPManagementSystem.UI.Groups
             {
                 GroupsBL bl = new GroupsBL();
                 
-                // Load all possible students (unassigned + current members)
                 DataTable allStudents = bl.GetAllStudentsForUpdate(_groupId);
                 allStudents.Columns.Add("Display", typeof(string), "[Reg No] + ' - ' + [Name]");
                 
@@ -32,7 +31,6 @@ namespace FYPManagementSystem.UI.Groups
                 clbStudents.DisplayMember = "Display";
                 clbStudents.ValueMember = "Id";
 
-                // Pre-check current members
                 DataTable currentMembers = bl.GetGroupStudents(_groupId);
                 List<int> memberIds = new List<int>();
                 foreach (DataRow row in currentMembers.Rows)

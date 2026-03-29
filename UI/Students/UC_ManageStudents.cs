@@ -1,8 +1,8 @@
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
-using FYPManagementSystem.BusinessLogic;
-using FYPManagementSystem.Models;
+using FYPManagementSystem.BL;
 
 namespace FYPManagementSystem.UI.Students
 {
@@ -21,10 +21,22 @@ namespace FYPManagementSystem.UI.Students
             {
                 if (ctrl is Button btn)
                 {
-                    btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(0, 100, 180);
-                    btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(0, 120, 215);
+                    btn.MouseEnter += Button_MouseEnter;
+                    btn.MouseLeave += Button_MouseLeave;
                 }
             }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 100, 180);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 120, 215);
         }
 
         public void LoadStudentData()
@@ -103,7 +115,7 @@ namespace FYPManagementSystem.UI.Students
             }
             else
             {
-                MessageBox.Show("Please select an entire row from the left margin to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a student to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

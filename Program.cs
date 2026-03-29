@@ -12,7 +12,7 @@ namespace FYPManagementSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string status = DataLayer.DatabaseConnection.TestConnection();
+            string status = DL.DatabaseConnection.TestConnection();
             
             if (status == "Database connection successful")
             {

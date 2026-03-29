@@ -1,12 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using FYPManagementSystem.BusinessLogic;
-using FYPManagementSystem.Models;
+using FYPManagementSystem.BL;
 
 namespace FYPManagementSystem.UI.Projects
 {
@@ -25,10 +21,22 @@ namespace FYPManagementSystem.UI.Projects
             {
                 if (ctrl is Button btn)
                 {
-                    btn.MouseEnter += (s, e) => btn.BackColor = Color.FromArgb(0, 100, 180);
-                    btn.MouseLeave += (s, e) => btn.BackColor = Color.FromArgb(0, 120, 215);
+                    btn.MouseEnter += Button_MouseEnter;
+                    btn.MouseLeave += Button_MouseLeave;
                 }
             }
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 100, 180);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            btn.BackColor = Color.FromArgb(0, 120, 215);
         }
 
         private void UC_ManageProjects_Load(object sender, EventArgs e)
@@ -61,7 +69,7 @@ namespace FYPManagementSystem.UI.Projects
             {
                 int id = Convert.ToInt32(dgvProjects.SelectedRows[0].Cells["Id"].Value);
                 string title = dgvProjects.SelectedRows[0].Cells["Title"].Value.ToString();
-                string description = dgvProjects.SelectedRows[0].Cells["Description"].Value?.ToString() ?? "";
+                string description = dgvProjects.SelectedRows[0].Cells["Description"].Value?.ToString() ?? string.Empty;
                 UpdateProject updateForm = new UpdateProject(id, title, description);
                 updateForm.ShowDialog();
                 LoadProjects();
@@ -76,7 +84,7 @@ namespace FYPManagementSystem.UI.Projects
         {
             if (dgvProjects.SelectedRows.Count > 0)
             {
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this project?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this project?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(dgvProjects.SelectedRows[0].Cells["Id"].Value);
@@ -94,13 +102,12 @@ namespace FYPManagementSystem.UI.Projects
             }
             else
             {
-                MessageBox.Show("Please select an entire row to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a project to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void dgvProjects_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
         }
 
         private void btnaddProject_Click(object sender, EventArgs e)

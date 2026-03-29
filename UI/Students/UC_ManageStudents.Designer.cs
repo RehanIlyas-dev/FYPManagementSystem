@@ -107,7 +107,7 @@ namespace FYPManagementSystem.UI.Students
             // 
             // databaseConnectionBindingSource
             // 
-            databaseConnectionBindingSource.DataSource = typeof(DataLayer.DatabaseConnection);
+            databaseConnectionBindingSource.DataSource = typeof(DL.DatabaseConnection);
             // 
             // panel1
             // 

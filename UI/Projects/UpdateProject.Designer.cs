@@ -28,11 +28,23 @@ namespace FYPManagementSystem.UI.Projects
         /// </summary>
         private void InitializeComponent()
         {
-            txtTitle = new System.Windows.Forms.TextBox();
-            txtDescription = new System.Windows.Forms.RichTextBox();
-            lblTitle = new System.Windows.Forms.Label();
-            btnUpdateProject = new System.Windows.Forms.Button();
+            pnlHeader = new Panel();
+            txtTitle = new TextBox();
+            txtDescription = new RichTextBox();
+            lblTitle = new Label();
+            btnUpdateProject = new Button();
+            pnlHeader.SuspendLayout();
             SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(0, 120, 215);
+            pnlHeader.Controls.Add(lblTitle);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(800, 100);
+            pnlHeader.TabIndex = 4;
             // 
             // txtTitle
             // 
@@ -54,48 +66,60 @@ namespace FYPManagementSystem.UI.Projects
             // 
             // lblTitle
             // 
-            lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            lblTitle.Anchor = AnchorStyles.None;
             lblTitle.AutoSize = true;
-            lblTitle.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = System.Drawing.Color.RosyBrown;
-            lblTitle.Location = new System.Drawing.Point(260, 20);
+            lblTitle.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(210, 16);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new System.Drawing.Size(380, 68);
+            lblTitle.Size = new Size(380, 68);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Update Project";
             // 
             // btnUpdateProject
             // 
-            btnUpdateProject.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            btnUpdateProject.Location = new System.Drawing.Point(310, 310);
+            btnUpdateProject.Anchor = AnchorStyles.Top;
+            btnUpdateProject.BackColor = Color.FromArgb(0, 120, 215);
+            btnUpdateProject.FlatAppearance.BorderSize = 0;
+            btnUpdateProject.FlatStyle = FlatStyle.Flat;
+            btnUpdateProject.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnUpdateProject.ForeColor = Color.White;
+            btnUpdateProject.Location = new Point(320, 310);
             btnUpdateProject.Name = "btnUpdateProject";
-            btnUpdateProject.Size = new System.Drawing.Size(160, 50);
+            btnUpdateProject.Size = new Size(160, 50);
             btnUpdateProject.TabIndex = 3;
             btnUpdateProject.Text = "Update Project";
-            btnUpdateProject.UseVisualStyleBackColor = true;
+            btnUpdateProject.UseVisualStyleBackColor = false;
             btnUpdateProject.Click += btnUpdateProject_Click;
+
             // 
             // UpdateProject
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(pnlHeader);
             Controls.Add(btnUpdateProject);
             Controls.Add(txtDescription);
             Controls.Add(txtTitle);
-            Controls.Add(lblTitle);
             Name = "UpdateProject";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Update Project";
+
             Load += UpdateProject_Load;
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.RichTextBox txtDescription;
-        private System.Windows.Forms.Button btnUpdateProject;
+        private Panel pnlHeader;
+        private Label lblTitle;
+        private TextBox txtTitle;
+        private RichTextBox txtDescription;
+        private Button btnUpdateProject;
     }
 }

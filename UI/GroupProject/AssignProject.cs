@@ -1,10 +1,10 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using FYPManagementSystem.BusinessLogic;
+using FYPManagementSystem.BL;
 using FYPManagementSystem.Models;
 
-namespace FYPManagementSystem.UI.Groups
+namespace FYPManagementSystem.UI.GroupProject
 {
     public partial class AssignProject : Form
     {

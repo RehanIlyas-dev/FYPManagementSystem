@@ -1,14 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using FYPManagementSystem.UI.Students;
 using FYPManagementSystem.UI.Advisors;
 using FYPManagementSystem.UI.Projects;
 using FYPManagementSystem.UI.Groups;
+using FYPManagementSystem.UI.ProjectAdvisor;
+using FYPManagementSystem.UI.Evaluations;
+using FYPManagementSystem.UI.GroupProject;
+using FYPManagementSystem.Reports.UI;
 
 namespace FYPManagementSystem.UI.Main
 {
@@ -40,18 +40,13 @@ namespace FYPManagementSystem.UI.Main
         private void SidebarButton_MouseEnter(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            btn.BackColor = Color.RosyBrown;
+            btn.BackColor = Color.FromArgb(0, 100, 180);
         }
 
         private void SidebarButton_MouseLeave(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             btn.BackColor = Color.Transparent;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -64,17 +59,11 @@ namespace FYPManagementSystem.UI.Main
 
         private void ManageStudents_Click(object sender, EventArgs e)
         {
-
             this.panelMainContent.Controls.Clear();
             UC_ManageStudents studentScreen = new UC_ManageStudents();
             studentScreen.Dock = DockStyle.Fill;
             this.panelMainContent.Controls.Add(studentScreen);
             studentScreen.BringToFront();
-        }
-
-        private void panelMainContent_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void ManageAdvisors_Click(object sender, EventArgs e)
@@ -103,5 +92,44 @@ namespace FYPManagementSystem.UI.Main
             this.panelMainContent.Controls.Add(uc);
             uc.BringToFront();
         }
+
+        private void AssignAdvisors_Click(object sender, EventArgs e)
+        {
+            this.panelMainContent.Controls.Clear();
+            UC_ManageProjectAdvisors uc = new UC_ManageProjectAdvisors();
+            uc.Dock = DockStyle.Fill;
+            this.panelMainContent.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void ManageEvaluations_Click(object sender, EventArgs e)
+        {
+            this.panelMainContent.Controls.Clear();
+            UC_ManageEvaluations uc = new UC_ManageEvaluations();
+            uc.Dock = DockStyle.Fill;
+            this.panelMainContent.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void MarkEvaluations_Click(object sender, EventArgs e)
+        {
+            this.panelMainContent.Controls.Clear();
+            UC_MarkEvaluations uc = new UC_MarkEvaluations();
+            uc.Dock = DockStyle.Fill;
+            this.panelMainContent.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void Reports_Click(object sender, EventArgs e)
+        {
+            this.panelMainContent.Controls.Clear();
+            UC_Reports uc = new UC_Reports();
+            uc.Dock = DockStyle.Fill;
+            this.panelMainContent.Controls.Add(uc);
+            uc.BringToFront();
+        }
+
+        private void panelMainContent_Paint(object sender, PaintEventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
     }
 }

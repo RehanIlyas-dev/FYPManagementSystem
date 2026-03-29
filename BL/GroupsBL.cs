@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using FYPManagementSystem.Models;
-using FYPManagementSystem.DataLayer;
+using FYPManagementSystem.DL;
 
-namespace FYPManagementSystem.BusinessLogic
+namespace FYPManagementSystem.BL
 {
     public class GroupsBL
     {

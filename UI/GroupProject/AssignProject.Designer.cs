@@ -1,4 +1,4 @@
-namespace FYPManagementSystem.UI.Groups
+namespace FYPManagementSystem.UI.GroupProject
 {
     partial class AssignProject
     {
@@ -15,13 +15,25 @@ namespace FYPManagementSystem.UI.Groups
 
         private void InitializeComponent()
           {
+            pnlHeader = new Panel();
             cmbGroups = new ComboBox();
             cmbProjects = new ComboBox();
             btnAssign = new Button();
             lblGroup = new Label();
             lblProject = new Label();
             lblTitle = new Label();
+            pnlHeader.SuspendLayout();
             SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.FromArgb(0, 120, 215);
+            pnlHeader.Controls.Add(lblTitle);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(800, 100);
+            pnlHeader.TabIndex = 6;
             // 
             // cmbGroups
             // 
@@ -44,13 +56,19 @@ namespace FYPManagementSystem.UI.Groups
             // btnAssign
             // 
             btnAssign.Anchor = AnchorStyles.Top;
-            btnAssign.Location = new Point(340, 280);
+            btnAssign.BackColor = Color.FromArgb(0, 120, 215);
+            btnAssign.FlatAppearance.BorderSize = 0;
+            btnAssign.FlatStyle = FlatStyle.Flat;
+            btnAssign.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            btnAssign.ForeColor = Color.White;
+            btnAssign.Location = new Point(320, 280);
             btnAssign.Name = "btnAssign";
             btnAssign.Size = new Size(160, 50);
             btnAssign.TabIndex = 4;
             btnAssign.Text = "Assign Project";
-            btnAssign.UseVisualStyleBackColor = true;
+            btnAssign.UseVisualStyleBackColor = false;
             btnAssign.Click += btnAssign_Click;
+
             // 
             // lblGroup
             // 
@@ -74,11 +92,11 @@ namespace FYPManagementSystem.UI.Groups
             // 
             // lblTitle
             // 
-            lblTitle.Anchor = AnchorStyles.Top;
+            lblTitle.Anchor = AnchorStyles.None;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Times New Roman", 32F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.RosyBrown;
-            lblTitle.Location = new Point(220, 30);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(220, 16);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(360, 61);
             lblTitle.TabIndex = 5;
@@ -88,19 +106,25 @@ namespace FYPManagementSystem.UI.Groups
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblTitle);
+            Controls.Add(pnlHeader);
             Controls.Add(lblProject);
             Controls.Add(lblGroup);
             Controls.Add(btnAssign);
             Controls.Add(cmbProjects);
             Controls.Add(cmbGroups);
             Name = "AssignProject";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Assign Project";
+
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
+        private Panel pnlHeader;
         private ComboBox cmbGroups;
         private ComboBox cmbProjects;
         private Button btnAssign;

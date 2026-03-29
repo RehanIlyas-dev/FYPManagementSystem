@@ -1,11 +1,12 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 
-namespace FYPManagementSystem.DataLayer
+namespace FYPManagementSystem.DL
 {
     public class DatabaseConnection
     {
-        private static readonly string connectionString = "server=localhost;port=3306;database=projectadb26;user=root;password=1234;AllowPublicKeyRetrieval=True;";
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["ProjectDbConnection"].ConnectionString;
 
         public static MySqlConnection GetConnection()
         {
@@ -14,17 +15,19 @@ namespace FYPManagementSystem.DataLayer
 
         public static string TestConnection()
         {
+            MySqlConnection connection = GetConnection();
             try
             {
-                using (MySqlConnection connection = GetConnection())
-                {
-                    connection.Open();
-                    return "Database connection successful";
-                }
+                connection.Open();
+                return "Database connection successful";
             }
             catch (Exception ex)
             {
                 return ex.Message;
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }
