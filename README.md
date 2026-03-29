@@ -53,7 +53,7 @@ FYPManagementSystem/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/RehanIlyas-dev/middb26_2025-cs-65.git
+   git clone https://gitlab.com/RehanIlyas-dev/middb26_2025-cs-65.git
    cd FYPManagementSystem
    ```
 
