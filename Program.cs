@@ -20,8 +20,8 @@ namespace FYPManagementSystem
             }
             else
             {
-                MessageBox.Show("Connection Failed: " + status, "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Connection Failed: " + status + "\n\nOpening app without Database Connection.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // The app continues to MainDashBoard
             }
 
             Application.Run(new MainDashBoard());
