@@ -27,21 +27,21 @@ A Windows Forms desktop application for managing Final Year Projects (FYP) in an
 
 ```
 FYPManagementSystem/
-├── Models/          # Data models (Student, Advisor, Project, Group, Evaluation, etc.)
-├── BL/              # Business Logic layer
-├── DL/              # Data Access layer (MySQL via ADO.NET)
-├── UI/              # Windows Forms user interface
-│   ├── Main/        #   Main dashboard
-│   ├── Students/    #   Student CRUD forms
-│   ├── Advisors/    #   Advisor CRUD forms
-│   ├── Projects/    #   Project CRUD forms
-│   ├── Groups/      #   Group management forms
-│   ├── GroupProject/ #  Project-Group assignment
-│   ├── ProjectAdvisor/ # Advisor-Project assignment
-│   └── Evaluations/ #   Evaluation & grading forms
-├── Reports/         # Report generation (BL, DL, UI)
-├── Database.sql     # Full database schema with seed data
-└── App.config       # Connection string configuration
+├── Models/          
+├── BL/              
+├── DL/              
+├── UI/              
+│   ├── Main/        
+│   ├── Students/    
+│   ├── Advisors/    
+│   ├── Projects/    
+│   ├── Groups/      
+│   ├── GroupProject/ 
+│   ├── ProjectAdvisor/ 
+│   └── Evaluations/ 
+├── Reports/          
+├── Database.sql     
+└── App.config   
 ```
 
 ## Prerequisites
